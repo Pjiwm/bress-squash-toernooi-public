@@ -1,0 +1,119 @@
+<div class="container  p-3 p-md-5 p-xl-4 text-center text-md-left">
+    <div class="row d-flex">
+        <div class="col-12 col-md-10 p-0">
+            <h1 class="m-0 pb-4">Deelnemers</h1>
+        </div>
+        <div class="add-player-div shadow-sm col-11 col-md-12 mx-auto w-100 p-0">
+            <p class="font-weight-bold p-2 add-player-title mb-0 w-100"> Deelnemer toevoegen</p>
+            <div class="pl-3 py-4 pl-md-5 add-player-body">
+                <form class="col-12 col-md-10 col-lg-5" #playerForm="ngForm" name="form"
+                    (ngSubmit)="playerForm.form.valid && onSubmit(); playerForm.resetForm()" novalidate>
+                    <div class="mb-3">
+                        <label class="form-label">Voornaam</label>
+                        <input [(ngModel)]="player.firstName" name="firstName" #firstname="ngModel"
+                            [ngClass]="{'is-invalid': firstname.invalid && firstname.touched}" required type="text"
+                            class="form-control mt-1" placeholder="Voornaam">
+                        <div *ngIf="firstname.invalid && firstname.touched" class="text-left mx-1 mt-1">
+                            <p class="validation-error">Voornaam is verplicht</p>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Achternaam</label>
+                        <input [(ngModel)]="player.lastName" name="lastName" #lastName="ngModel"
+                            [ngClass]="{'is-invalid': lastName.invalid && lastName.touched}" required type="text"
+                            class="form-control mt-1" placeholder="Achternaam">
+                        <div *ngIf="lastName.invalid && lastName.touched" class="text-left mx-1 mt-1">
+                            <p class="validation-error">Achternaam is verplicht</p>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Divisie</label>
+                        <select [(ngModel)]="selectedOption" id="division" name="divisie"
+                            class="add-player-input form-control">
+                            <option *ngFor="let select of selectList" value="{{ select._id }}">{{ select.name }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="mr-0 mr-md-4 d-inline-block d-md-block w-100">
+                        <button type="submit"
+                            class="ml-0 d-block d-md-inline-block add-player-btn btn btn-block mt-4 mb-1"> Speler
+                            toevoegen
+                        </button>
+                    </div>
+                </form>
+                <div class="pb-3">
+                    <div class="float-right d-block d-md-inline-block mr-4">
+                        <p>In totaal <b>{{playerCount}}</b> speler</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="player-list-collection col-12 mt-5">
+            <div class="row player-list-row d-flex d-justify-content-between">
+
+                <div class="player-list beginner col-11 col-md-4 mb-4 mx-auto px-0 pr-md-2">
+                    <ul class="p-0 shadow-sm pb-1">
+                        <p class="division-name p-2 font-weight-bold">Beginners</p>
+                        <div *ngIf="this.players[0].length !== 0 else elseBlock">
+                            <div *ngFor="let player of players![0]">
+                                <li style="list-style-type: none;" class="px-2">
+                                    <p>{{player.firstName + " " + player.lastName}}
+                                        <a (click)="removePlayer(player._id)">
+                                            <fa-icon class="float-right hover" [icon]="faUserSlash"></fa-icon>
+                                        </a>
+                                    </p>
+                                </li>
+                            </div>
+                        </div>
+                        <ng-template #elseBlock>
+                            <p class="px-2 text-center">Geen spelers gevonden</p>
+                        </ng-template>
+                    </ul>
+                </div>
+
+                <div class="player-list Intermediate col-11 col-md-4 mb-4 mx-auto px-0 px-md-2">
+                    <ul class="p-0 shadow-sm pb-1">
+                        <p class="division-name p-2 font-weight-bold">Half-gevorderden</p>
+                        <div *ngIf="this.players[1].length !== 0 else elseBlock">
+                            <div *ngFor="let player of players![1]">
+                                <li style="list-style-type: none;" class="px-2">
+                                    <p>{{player.firstName + " " + player.lastName}}
+                                        <a (click)="removePlayer(player._id)">
+                                            <fa-icon class="float-right hover" [icon]="faUserSlash"></fa-icon>
+                                        </a>
+                                    </p>
+                                </li>
+                            </div>
+                        </div>
+                        <ng-template #elseBlock>
+                            <p class="px-2 text-center">Geen spelers gevonden</p>
+                        </ng-template>
+                    </ul>
+                </div>
+
+                <div class="player-list Advanced col-11 col-md-4 mb-4 mx-auto px-0 pl-md-2">
+                    <ul class="p-0 shadow-sm pb-1">
+                        <p class="division-name p-2 font-weight-bold">Gevorderden</p>
+                        <div *ngIf="this.players[2].length !== 0 else elseBlock">
+                            <div *ngFor="let player of players![2]">
+                                <li style="list-style-type: none;" class="px-2">
+                                    <p>{{player.firstName + " " + player.lastName}}
+                                        <a (click)="removePlayer(player._id)">
+                                            <fa-icon class="float-right hover" [icon]="faUserSlash"></fa-icon>
+                                        </a>
+                                    </p>
+                                </li>
+                            </div>
+                        </div>
+                        <ng-template #elseBlock>
+                            <p class="px-2 text-center">Geen spelers gevonden</p>
+                        </ng-template>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

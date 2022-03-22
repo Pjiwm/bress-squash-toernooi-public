@@ -1,0 +1,88 @@
+@use '../../../variables';
+
+.planning {
+    .title {
+        background-color: variables.$primary-color;
+        padding: 0.5rem 1.5rem;
+        color: #fff;
+    }
+    .diagonal-line {
+        background-color: variables.$title-color;
+        height: 1px;
+        margin-top: 10px;
+        transform: translateY(12px) rotate(125deg);
+        &::after {
+        content: "v";
+        position: absolute;
+        top: -4px;
+        right: 14px;
+        transform: rotate(-125deg);
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #027dc1
+        }
+        &::before {
+        content: "s";
+        position: absolute;
+        bottom: -4px;
+        left: 14px;
+        transform: rotate(-125deg);
+        font-weight: bold;
+        font-size: 1.1rem;
+        color:#f02b23
+        }
+    }
+}
+
+.scrollable {
+  overflow-y: auto;
+  height: 60vh;
+}
+
+.qeue{
+
+}
+
+.match{
+    font-size: medium;
+}
+
+.versus {
+    background: #fff;
+  }
+  .versus p {
+    margin: 0px;
+  }
+
+.bg-white {
+    background-color: #fff;
+    p {
+        display: inline-block;
+    }
+}
+
+.bg-grey{
+    background-color: variables.$secondary-color;
+}
+
+
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+  .planning .diagonal-line {
+    margin-top: 0;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {  }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {  }

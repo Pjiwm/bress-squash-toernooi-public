@@ -1,0 +1,96 @@
+<div class="container-fluid py-5">
+  <div class="row">
+    <div *ngIf="!isStarted; else poolPhase" class="col-12">
+      <a (click)="generatePools()" class="btn btn-block start-btn">Start toernooi</a>
+    </div>
+    <ng-template #poolPhase>
+      <div *ngIf="this.tournament" class="col-12">
+        <h1 class="pl-3">Poulefase</h1>
+      </div>
+      <div class="col-12 pb-4">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-link active" id="nav-beginner-tab" data-toggle="tab" href="#nav-beginner" role="tab"
+              aria-controls="nav-beginner" aria-selected="true">Beginner</a>
+            <a class="nav-link" id="nav-intermediate-tab" data-toggle="tab" href="#nav-intermediate" role="tab"
+              aria-controls="nav-intermediate" aria-selected="false">Half-gevorderden</a>
+            <a class="nav-link" id="nav-advanced-tab" data-toggle="tab" href="#nav-advanced" role="tab"
+              aria-controls="nav-advanced" aria-selected="false">Gevorderden</a>
+          </div>
+        </nav>
+      </div>
+      <div class="tab-content col-12" id="nav-tabContent">
+        <div class="tab-pane fade show active row" id="nav-beginner" role="tabpanel" aria-labelledby="nav-beginner-tab">
+          <div class="col-12 col-xl-3 poule-group">
+            <div class="row">
+              <div *ngFor="let pool of divisions[0]?.pools" class="col-10 col-md-7 col-lg-5 col-xl-12 columns">
+                <div [routerLink]="[pool._id]" class="poule h-100">
+                  <div class="poule-title">
+                    <!-- poolNr is not defined?-->
+                    <h4 class="m-0 d-inline-block">Poule {{ pool.poolNr }}</h4>
+                  </div>
+                  <div class="poule-body">
+                    <p *ngFor="let player of pool.players">
+                      {{ player.firstName }} {{player.lastName}}
+                    </p>
+                  </div>
+                </div>
+                <img alt="mobile-swipe-icon" class="mobile-swipe " src="/assets/img/swipe.svg" />
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-xl-9 pt-4 pt-xl-2">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+
+        <div class="tab-pane fade row" id="nav-intermediate" role="tabpanel" aria-labelledby="nav-intermediate-tab">
+          <div class="col-12 col-xl-3 poule-group">
+            <div class="row">
+              <div *ngFor="let pool of divisions[1]?.pools" class="col-10 col-md-7 col-lg-5 col-xl-12 columns">
+                <div [routerLink]="pool._id" class="poule h-100">
+                  <div class="poule-title">
+                    <!-- poolNr is not defined?-->
+                    <h4 class="m-0 d-inline-block">Poule {{ pool.poolNr }}</h4>
+                  </div>
+                  <div class="poule-body">
+                    <p *ngFor="let player of pool.players">
+                      {{ player.firstName }} {{player.lastName}}
+                    </p>
+                  </div>
+                </div>
+                <img alt="mobile-swipe-icon" class="mobile-swipe " src="/assets/img/swipe.svg" />
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-xl-9 pt-4 pt-xl-2">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+        <div class="tab-pane fade row" id="nav-advanced" role="tabpanel" aria-labelledby="nav-advanced-tab">
+          <div class="col-12 col-xl-3 poule-group">
+            <div class="row">
+              <div *ngFor="let pool of divisions[2]?.pools" class="col-10 col-md-7 col-lg-5 col-xl-12 columns">
+                <div [routerLink]="[pool._id]" class="poule h-100">
+                  <div class="poule-title">
+                    <!-- poolNr is not defined?-->
+                    <h4 class="m-0 d-inline-block">Poule {{ pool.poolNr }}</h4>
+                  </div>
+                  <div class="poule-body">
+                    <p *ngFor="let player of pool.players">
+                      {{ player.firstName }} {{player.lastName}}
+                    </p>
+                  </div>
+                </div>
+                <img alt="mobile-swipe-icon" class="mobile-swipe " src="/assets/img/swipe.svg" />
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-xl-9 pt-4 pt-xl-2">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  node:
+    container_name: bress_node
+    build: .
+    volumes: 
+      - .:/usr/src/app
+    links:
+      - 'mongo'
+    ports: 
+      - "4200:4200"
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      MONGO_DATABASE_CONNECTION: ${MONGO_DATABASE_CONNECTION}
+      ISSUER_BASE_URL: ${ISSUER_BASE_URL}
+      CLIENT_ID: ${CLIENT_ID}
+      BASE_URL: ${BASE_URL}
+      NEO4J_URL: ${NEO4J_URL}
+      NEO4j_USER: ${NEO4J_USER}
+      NEO4j_PASSWORD: ${NEO4J_PASSWORD}
+
+  mongo:
+    container_name: bress_mongo
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/db:/data/db
+
+  neo4j:
+    image: neo4j:4.0.3
+    container_name: bress_neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"

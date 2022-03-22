@@ -1,0 +1,66 @@
+{
+  "extends": [
+    "../../.eslintrc.json"
+  ],
+  "ignorePatterns": [
+    "!**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.js"
+      ],
+      "extends": [
+        "plugin:@nrwl/nx/angular",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        "@typescript-eslint/no-empty-function": "warn",
+        "@angular-eslint/no-empty-lifecycle-method": "warn",
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "bressSquashToernooi",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "bress-squash-toernooi",
+            "style": "kebab-case"
+          }
+        ],
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            "vars": "local",
+            "args": "none",
+            "ignoreRestSiblings": true
+          }
+        ],
+        "quotes": [
+          "error",
+          "single"
+        ],
+        "semi": [
+          "error",
+          "never"
+        ],
+        "indent": ["warn", "tab"]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@nrwl/nx/angular-template"
+      ],
+      "rules": {}
+    }
+  ]
+}

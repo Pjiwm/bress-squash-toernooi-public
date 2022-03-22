@@ -1,0 +1,32 @@
+{
+  "extends": ["../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": [
+          "error", 
+          { "vars": "local", "args": "none", "ignoreRestSiblings": true}
+        ],
+        "quotes": [
+          "error",
+          "single"
+        ],
+        "semi": [
+          "error",
+          "never"
+        ],
+        "indent": ["warn", "tab"]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": { }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ]
+}

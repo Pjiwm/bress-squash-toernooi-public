@@ -1,0 +1,13 @@
+<div class="orange-bg nav navbar d-flex justify-content-center w-100">
+  <a *ngIf="_router.url !== '/'" routerLink="/" class="btn btn-lg back-btn">
+    <fa-icon [icon]="faArrowLeft"></fa-icon>
+  </a>
+  <img routerlink='/' alt="Bress logo" class="logo" src="/assets/img/LogoBress.png" />
+
+  <div class="login" *ngIf="auth.user$ | async as user">
+    <a (click)="onLogout()">uitloggen</a>
+  </div>
+  <div class="login" *ngIf="!isLoggedIn">
+    <a (click)="onLogin()">inloggen</a>
+  </div>
+</div>

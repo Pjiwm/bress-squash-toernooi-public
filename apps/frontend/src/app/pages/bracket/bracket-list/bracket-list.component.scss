@@ -1,0 +1,83 @@
+@use '../../../../variables';
+
+
+.tab-content>.active {
+  display: flex !important;
+  background-color: variables.$secondary-color;
+}
+
+#nav-tab .nav-link {
+  font-size: .81rem;
+}
+.title {
+    background-color: variables.$primary-color;
+    padding: 0.5rem 1.5rem;
+    color: #fff;
+  }
+
+.nav-tabs .nav-link.active {
+  border-top: 3px solid variables.$primary-color;
+}
+
+.tab-pane .bracket-row {
+    padding-left: 30px;
+    overflow-x: auto;
+}
+
+.title {
+    background-color: variables.$primary-color;
+    padding: 0.5rem 1.5rem;
+    color: #fff;
+}
+
+.bracket-title {
+    background-color: variables.$primary-color;
+    padding: 0.5rem 1.5rem;
+    color: #fff;
+}
+
+.bracket-item {
+    border-bottom: 2px solid transparent;
+    transition: .2s all ease;
+    background-color: #fff;
+    &:hover {
+      cursor: pointer;
+      border-bottom: 2px solid variables.$primary-color;
+    }
+    .bracket-title {
+      background-color: variables.$primary-color;
+      padding: 0.5rem 1.5rem;
+      h4 {
+        color: #fff;
+      }
+    }
+    .bracket-body {
+      padding: 1.5rem;
+    }
+  }  
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+   #nav-tab .nav-link {
+    font-size: 1rem;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  nav {
+    padding-left: 15px;
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+}

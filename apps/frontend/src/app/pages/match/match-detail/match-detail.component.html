@@ -1,0 +1,69 @@
+<div class="container-fluid match-detail py-5">
+    <a (click)="back()" class="btn btn-lg back-btn position-absolute">
+        <fa-icon [icon]="faArrowLeft"></fa-icon>
+    </a>
+    <div class="row d-flex justify-content-center">
+        <div *ngIf="match" class="col-12 col-lg-10">
+            <h2 class="title m-0">Wedstrijd resultaat <span class="float-right">Zaal 3</span></h2>
+            <form #setForm="ngForm" name="form" (ngSubmit)="onSubmit()" novalidate  class="body">
+                <div class="row d-flex justify-content-center text-center pt-5">
+                    <div class="col-12 col-md-8 d-flex justify-content-around">
+                        <div *ngIf="match.player1.firstName !== undefined">
+                            <h3> {{ match.player1.firstName }} {{ match.player1.lastName}}</h3>
+                        </div>
+                        <div>
+                        </div>
+                        <div *ngIf="match.player2.firstName !== undefined">
+                            <h3> {{ match.player2.firstName }} {{ match.player2.lastName }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center pt-3">
+                    <div class="col-12 col-md-8 d-flex justify-content-around">
+                        <div class="form-group">
+                            <input [(ngModel)]="sets[0].playerOneScore" class="form-control transparent-input" type='number' min="0" max="99" placeholder="0"
+                                name='scoreOne' required>
+                        </div>
+                        <div>
+                            <p class="m-0 middle-stripe align-self-center">-</p>
+                        </div>
+                        <div class="form-group">
+                            <input [(ngModel)]="sets[0].playerTwoScore" class="form-control transparent-input" type='number' min="0" max="99" placeholder="0"
+                                name='scoreOne' required>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 d-flex justify-content-around">
+                        <div class="form-group">
+                            <input [(ngModel)]="sets[1].playerOneScore" class="form-control transparent-input" type='number' min="0" max="99" placeholder="0"
+                                name='scoreOne' required>
+                        </div>
+                        <div>
+                            <p class="m-0 middle-stripe align-self-center">-</p>
+                        </div>
+                        <div class="form-group">
+                            <input [(ngModel)]="sets[1].playerTwoScore" class="form-control transparent-input" type='number' min="0" max="99" placeholder="0"
+                                name='scoreOne' required>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 d-flex justify-content-around">
+                        <div class="form-group">
+                            <input [(ngModel)]="sets[2].playerOneScore" class="form-control transparent-input" type='number' min="0" max="99" placeholder="0"
+                                name='scoreOne' required>
+                        </div>
+                        <div>
+                            <p class="m-0 middle-stripe align-self-center">-</p>
+                        </div>
+                        <div class="form-group">
+                            <input [(ngModel)]="sets[2].playerTwoScore" class="form-control transparent-input" type='number' min="0" max="99" placeholder="0"
+                                name='scoreOne' required>
+                        </div>
+                    </div>
+                    <div class="col-5 d-flex justify-content-center">
+                        <input type="submit" value="Score opslaan" placeholder="Submit"
+                            class="btn btn-primary submit-btn my-5" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

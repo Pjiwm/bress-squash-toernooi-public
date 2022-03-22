@@ -1,0 +1,64 @@
+@use '../../../variables';
+
+.login {
+    right: 15px;
+    position: absolute;
+    color: white;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+
+.orange-bg {
+    background-color: variables.$primary-color
+}
+
+.logo {
+    width: 120px;
+    padding: 5px 0;
+}
+
+.back-btn { 
+    color: #fff;
+    position: absolute;
+    left: 0;
+    font-size: 1.8rem;
+}
+
+.navbar{
+    z-index: 2000;
+    position: relative;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .navbar{
+        position: fixed;
+    }
+    .back-btn { 
+        left: 15px;
+    }
+    .logo {
+        width: 200px;
+    }
+    .login {
+        right: 30px;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {}

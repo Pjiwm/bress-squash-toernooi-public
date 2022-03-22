@@ -1,0 +1,96 @@
+<div class="planning container-fluid">
+
+    <div class="row mb-5 py-3">
+        <div class="p-4 col-12 col-lg-4 order-2 order-lg-1">
+            <h2 class="py-2"> Planning </h2>
+
+            <div class="bg-grey qeue pb-1">
+                <h5 class="title m-0 text-center text-md-left"> Aankomende Wedstrijden</h5>
+                <div class="scrollable">
+                    <div *ngFor="let match of this.matches">
+                        <div class="versus shadow p-3 m-3 d-flex justify-content-center bg-white match">
+                            <p class="col-6 text-center m-0 my-auto">{{match.player1.firstName}} {{match.player1.lastName}}
+                            </p>
+                            <div class="px-3 diagonal-line"></div>
+                            <p class="col-6 text-center m-0 my-auto">{{match.player2.firstName}} {{match.player2.lastName}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rooms p-4 col-12 col-lg-8 order-1 order-lg-2">
+            <h2 class="py-2"> Huidige Wedstrijden </h2>
+
+            <div class="row">
+                <div class="room col-12 col-lg-6 pb-3">
+                    <h5 class="title m-0 text-center text-md-left"> Zaal 1 </h5>
+                    <div class="bg-grey p-3">
+                        <div class="versus shadow p-3 d-flex justify-content-center">
+                            <p>Alp van Ballegooij</p>
+                            <div class="mx-3 px-3 diagonal-line"></div>
+                            <p>Hanad Heijboer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room col-12 col-lg-6 pb-3">
+                    <h5 class="title m-0 text-center text-md-left"> Zaal 2 </h5>
+                    <div class="bg-grey p-3">
+                        <div class="versus shadow p-3 d-flex justify-content-center">
+                            <p>Alp Ballegooij</p>
+                            <div class="mx-3 px-3 diagonal-line"></div>
+                            <p>Hanad Heijboer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room col-12 col-lg-6 pb-3">
+                    <h5 class="title m-0 text-center text-md-left"> Zaal 3 </h5>
+                    <div class="bg-grey p-3">
+                        <div class="versus shadow p-3 d-flex justify-content-center">
+                            <p>Alp van Ballegooij</p>
+                            <div class="mx-3 px-3 diagonal-line"></div>
+                            <p>Hanad Heijboer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room col-12 col-lg-6 pb-3">
+                    <h5 class="title m-0 text-center text-md-left"> Zaal 4 </h5>
+                    <div class="bg-grey p-3">
+                        <div class="versus shadow p-3 d-flex justify-content-center">
+                            <p>Alp van Ballegooij</p>
+                            <div class="mx-3 px-3 diagonal-line"></div>
+                            <p>Hanad Heijboer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room col-12 col-lg-6 pb-3">
+                    <h5 class="title m-0 text-center text-md-left"> Zaal 5 </h5>
+                    <div class="bg-grey p-3">
+                        <div class="versus shadow p-3 d-flex justify-content-center">
+                            <p>Alp Ballegooij</p>
+                            <div class="mx-3 px-3 diagonal-line"></div>
+                            <p>Hanad Heijboer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room col-12 col-lg-6 pb-3">
+                    <h5 class="title m-0 text-center text-md-left"> Zaal 6 </h5>
+                    <div class="bg-grey p-3">
+                        <div class="versus shadow p-3 d-flex justify-content-center">
+                            <p>Alp van Ballegooij</p>
+                            <div class="mx-3 px-3 diagonal-line"></div>
+                            <p>Hanad Heijboer</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>

@@ -1,0 +1,27 @@
+<div *ngIf="_router.url !== '/'"
+    class="background-secondary bottomNav p-0 shadow-sm d-flex justify-content-around d-md-none py-2">
+    <div class="bottomNav-item mx-3 my-2">
+        <a class="bottomNav-a d-block" routerLink="edit" routerLinkActive="active-link">
+            <fa-icon [icon]="faCog" class="icon"></fa-icon>
+        </a>
+    </div>
+
+    <div class="bottomNav-item mx-3 my-2">
+        <a class="bottomNav-a d-block" routerLink="playerlist" routerLinkActive="active-link">
+            <fa-icon [icon]="faUsers" class="icon"></fa-icon>
+        </a>
+    </div>
+
+    <div class="bottomNav-item mx-3 my-2">
+        <a class="bottomNav-a d-block" routerLink="poule" routerLinkActive="active-link">
+            <fa-icon [icon]="faTrophy" class="icon"></fa-icon>
+        </a>
+    </div>
+
+    <div class="bottomNav-item mx-3 my-2">
+        <a class="bottomNav-a d-block" routerLink="planning" routerLinkActive="active-link">
+            <fa-icon [icon]="faCalenderAlt" class="icon"></fa-icon>
+        </a>
+    </div>
+
+</div>

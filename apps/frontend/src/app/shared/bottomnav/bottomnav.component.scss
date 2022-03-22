@@ -1,0 +1,41 @@
+@use '../../../variables';
+
+.background-secondary{
+    background-color: white;
+    z-index: 1000;
+}
+
+.bottomNav{
+    border-top: 2px solid variables.$secondary-color;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    align-content: center;
+}
+
+fa-icon{
+    color: variables.$title-color;
+    font-size: x-large;
+    &:hover{
+        color: black;
+    }
+}
+
+.bottomNav-item{
+    float: left;
+    display: block;
+    
+    &:hover{
+        color: black;
+        fa-icon{
+            color: black;
+        }
+    }
+}
+
+.active-link{
+    fa-icon{
+        color: variables.$primary-color !important;
+    }
+}

@@ -1,0 +1,39 @@
+<div class="container p-3 p-md-5 p-xl-4 text-center text-md-left">
+    <div class="row d-flex mb-5">
+        <div class="col-12 col-md-10 p-0">
+            <h1 *ngIf="!isEdit" class="m-0 pb-4">Toernooi maken</h1>
+            <h1 *ngIf="isEdit" class="m-0 pb-4">Toernooi aanpassen</h1>
+        </div>
+
+        <div class="add-tournament-div shadow-sm col-11 col-md-12 mx-auto w-100 p-0">
+            <p *ngIf="!isEdit" class="font-weight-bold p-2 add-tournament-title mb-0 w-100"> Toernooi maken</p>
+            <p *ngIf="isEdit" class="font-weight-bold p-2 add-tournament-title mb-0 w-100"> Toernooi aanpassen</p>
+            <div class="pl-3 pl-md-5 add-tournament-body">
+                <form #tournamentForm="ngForm" name="form" (ngSubmit)="onSubmit()" novalidate>
+                    <div class="py-2 d-inline-block d-md-block pt-4 input-group">
+                        <label for="playerName"
+                            class="ml-0 font-weight-bold d-block d-md-inline-block text-left">Toernooi
+                            naam: </label>
+                        <input [(ngModel)]="tournament.name" name="name" #name="ngModel" type="text"
+                            class="add-tournament-input form-control" placeholder="Toernooi naam" />
+                    </div>
+
+                    <div class="py-2 d-inline-block d-md-block input-group">
+                        <label for="playerName" class="ml-0 font-weight-bold d-block d-md-inline-block text-left">Datum:
+                        </label>
+                        <input [(ngModel)]="tournament.date" name="date" #date="ngModel" type="datetime-local"
+                            class="add-tournament-input form-control" placeholder="Toernooi datum" />
+                    </div>
+                    <div class="mr-0 mr-md-4 d-inline-block d-md-block w-100">
+                        <button (click)="onSubmit()" type="submit" *ngIf="isEdit"
+                            class="ml-0 d-block d-md-inline-block add-tournament-btn btn my-4 mb-1"> Aanpassingen
+                            toepassen </button>
+                        <button (click)="onSubmit()" type="submit" *ngIf="!isEdit"
+                            class="ml-0 d-block d-md-inline-block add-tournament-btn btn my-4 mb-1"> Toernooi maken
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

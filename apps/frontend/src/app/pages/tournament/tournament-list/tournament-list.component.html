@@ -1,0 +1,33 @@
+<div class="container py-4 text-center text-md-left">
+  <div class="row d-flex justify-content-center">
+    <div class="col-12 col-md-10 p-0">
+      <h1 class="m-0 pb-4">Toernooien</h1>
+    </div>
+    <a class="col-11 col-md-10 mx-3 py-4 add-tournament" [routerLink]="['/tournament/new']">
+      Nieuw toernooi toevoegen
+      <fa-icon class="pl-3" [icon]="faPlusSquare" size="lg"></fa-icon>
+    </a>
+    <div class="col-11 col-md-10 mt-3 tournament shadow-sm p-0" *ngFor="let tournament of tournaments">
+      <a class="d-block d-md-flex flex-wrap" [routerLink]="['/tournament', tournament._id, 'poule']">
+        <div class="text-center py-2 mr-0 mr-md-4 tournament-date">
+          <p class="m-0 font-weight-bold month d-inline-block d-md-block">{{ formatMonth(tournament.date) }}</p>
+          <p class="m-0 day d-inline-block d-md-block ml-2 ml-md-0">{{ formatDay(tournament.date) }}</p>
+        </div>
+        <div class="main py-2">
+          <p class="font-weight-bold m-0 title">{{ tournament.name }}</p>
+          <p class="m-0 date">{{ formatDate(tournament.date )}}</p>
+        </div>
+        <div class="end py-2 mr-0 mr-md-5 d-flex align-self-center justify-content-center">
+          <div class="mr-5">
+            <p class="font-weight-bold m-0 title">Start</p>
+            <p class="m-0 second">{{ formatTime(tournament.date) }}</p>
+          </div>
+          <div>
+            <p class="font-weight-bold m-0 title">Spelers</p>
+            <p class="m-0 second">{{ tournament.playerCount }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

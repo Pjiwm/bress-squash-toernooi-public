@@ -1,0 +1,22 @@
+<div class="poule-detail" *ngIf="pool">
+  <h2 class="title m-0 text-center text-md-left">{{ pool.poolNr }} overzicht</h2>
+  <div class="match p-4">
+    <h3>Wedstrijden</h3>
+    <div *ngFor="let match of pool.matches">
+      <a class="versus shadow p-3 my-3 d-flex justify-content-center" [routerLink]="['match/', match._id]"
+        [ngClass]="[match.playerOneHasWon ? 'match-played' : '' ]">
+        <p>{{match.player1.firstName}} {{match.player1.lastName}}</p>
+        <div class="mx-4 px-3 diagonal-line"></div>
+        <p>{{match.player2.firstName}} {{match.player2.lastName}}</p>
+      </a>
+    </div>
+    <h3>Puntentelling</h3>
+    <div class="bg-white p-3">
+      <div class="points" *ngFor="let player of pool.players;let rank = index;">
+        <span class="rank mr-3">{{ rank + 1 }}</span>
+        <p>
+          {{player.firstName}} {{player.lastName}} - {{player.matchPoints ? player.matchPoints : 0}} punten
+        </p>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,156 @@
+@use '../../../../variables';
+
+.poule-detail {
+.match-played {
+  background: rgba(0, 0, 0, 0.5);
+  p {
+    color: rgba(0, 0, 0, 0.3);
+  }
+  .diagonal-line {
+    background-color: rgba(0, 0, 0, 0.5);
+    &::after {
+      color: rgba(0, 0, 0, 0.3);
+    }
+    &::before {
+      color: rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+}
+
+
+.poule-detail {
+  .title {
+    background-color: variables.$primary-color;
+    padding: 0.5rem 1.5rem;
+    color: #fff;
+  }
+  .diagonal-line {
+    background-color: variables.$title-color;
+    height: 1px;
+    margin-top: 10px;
+    transform: translateY(12px) rotate(125deg);
+    &::after {
+      content: "v";
+      position: absolute;
+      top: -4px;
+      right: 14px;
+      transform: rotate(-125deg);
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #027dc1
+    }
+    &::before {
+      content: "s";
+      position: absolute;
+      bottom: -4px;
+      left: 14px;
+      transform: rotate(-125deg);
+      font-weight: bold;
+      font-size: 1.1rem;
+      color:#f02b23
+    }
+  }
+  .versus {
+    background: #fff;
+  }
+  .versus p {
+    margin: 0px;
+  }
+  .match {
+    background-color: variables.$secondary-color;
+    overflow-y: auto;
+  }
+
+  .bg-white {
+    background-color: #fff;
+    p {
+      display: inline-block;
+    }
+  }
+  .rank {
+    padding: 5px 10px;
+  }
+  .points {
+    &:first-child {
+      p {
+        color:#DAA520;
+        font-weight: bold;
+      }
+      .rank {
+        font-weight: bold;
+        color: #fff;
+        background-color: #DAA520
+      }
+    }
+    &:nth-child(2) {
+      p {
+        color: #929090;
+        font-weight: bold;
+      }
+      .rank {
+        font-weight: bold;
+        color: #fff;
+        background-color: #929090;
+      }
+    }
+  }
+
+}
+
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+  .poule-detail .diagonal-line {
+    margin-top: 0;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  
+  .match {
+    flex-wrap: wrap;
+    margin: 0;
+    overflow-y: auto;
+    &:hover::-webkit-scrollbar-track  {
+      background-color: variables.$secondary-color; 
+    }
+    &:hover::-webkit-scrollbar-thumb {
+      background-color: #888; 
+      &:hover {
+        background-color: #444
+      }
+    }
+  }
+
+
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+.match {
+  max-height: 64.4vh;
+}
+
+ }

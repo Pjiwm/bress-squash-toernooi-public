@@ -1,0 +1,63 @@
+@use '../../../../variables';
+
+.add-tournament-title{
+    background-color: variables.$primary-color;
+    color: white;
+}
+
+.add-tournament-btn{
+    background-color: variables.$primary-color;
+    color: white;
+    width: 90%;
+    border-radius: 0;
+    &:hover{
+        background-color: white;
+        color: variables.$primary-color;
+        border: 2px solid variables.$primary-color;
+    }
+}
+
+label{
+    width: auto;
+}
+
+.add-tournament-input{
+    width: 90%;
+}
+
+.add-tournament-body{
+    background-color: variables.$secondary-color;
+}
+
+ul{
+    height: 100%;
+    background-color: variables.$secondary-color;
+}
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+    label{
+        width: 400px;
+    }
+
+    .add-tournament-btn{
+        width: 400px;
+    }
+
+    .add-tournament-input{
+        width: 400px;
+    }
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {  }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {  }
