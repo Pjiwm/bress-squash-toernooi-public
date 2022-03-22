@@ -1,4 +1,12 @@
 # BressSquashToernooi
+This is a copy of the original repository made for showcase only.
+### Creators
+https://github.com/16Maarten
+https://github.com/pikuba
+https://github.com/melvingiebels
+https://github.com/Mo-Gal
+https://github.com/TeaDrinkingProgrammer
+https://github.com/Pjiwm
 This project was generated using [Nx](https://nx.dev).
 
 Check out the <a href="https://bress-squash-toernooi.herokuapp.com/api">API</a>
